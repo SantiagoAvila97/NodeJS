@@ -1,4 +1,4 @@
- const nombres = 'Saniago';
+ const nombres = 'Santiago';
  const apellidos = 'Avila Pacanchique';
 
  const imprimirNombreTemplate = `${nombres} ${apellidos}`;
@@ -33,12 +33,30 @@ const carro = ['BMW', 'Mercedez', 'Mazda'];
 
 const [carro1, carro2, carro3] = carro;
 
+console.log(carro);
 console.log(carro1);
 
 
 ///////////////////////////////////
 // Call back
+// Función que se envia como argumento (parametro) 
 ///////////////////////////////////
 
+setTimeout(( ) => {
+    console.log("Prueba Callback");
+}, 3000);
 
- 
+const getUsuarioByID = (id, callback) => {
+    const usuario = {
+        id,
+        nombreCompleto: 'Santiago Avila'
+    }
+
+    setTimeout(() => {
+        callback(usuario);
+    }, 3000);
+};
+
+getUsuarioByID( 1233890724, (usuario) => {
+    console.log(usuario)
+}); 
